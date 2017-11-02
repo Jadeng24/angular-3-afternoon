@@ -754,7 +754,7 @@ angular.module('swagShop').component('cart', {
 });
 ```
 
-This component will be responbile for displaying and updating the cart. We'll want to provide our template access to the cart, the cart's total, and all of the available methods in the cart service. It might help if you have the cart service open ( `app/services/cart.service.js` ) to see the methods. Let's start by assigning `cart` to the controller. `cart` should equal the current cart array. We can get that value by calling the `currentCart` method in the cart service.
+This component will be responsible for displaying and updating the cart. We'll want to provide our template access to the cart, the cart's total, and all of the available methods in the cart service. It might help if you have the cart service open ( `app/services/cart.service.js` ) to see the methods. Let's start by assigning `cart` to the controller. `cart` should equal the current cart array. We can get that value by calling the `currentCart` method in the cart service.
 
 ```js
 angular.module('swagShop').component('cart', {
@@ -819,7 +819,7 @@ angular.module('swagShop').component('cart', {
       return this.cart.reduce((total, current ) => total + current.price, 0);
     };
 
-    this.checkout = function() {
+    this.checkout = function(cartSrvc) {
       this.cart = cartSrvc.checkout();
     };
 
